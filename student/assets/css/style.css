@@ -629,7 +629,7 @@ ul.top-menu > form > li > .logout:hover, ul.top-menu > form > li > .logout:focus
     border-radius: 0 0 3px 3px;
 }
 
-.dropdown-menu.extended.logout > li:last-child > a, .dropdown-menu.extended.logout > li:last-child > a:hover {
+.dropdown-menu.extended.logout > li:last-child > a, .dropdown-menu.extended.logout > li:last-child > .logout:hover {
     color: #fff;
     border-bottom: none !important;
     text-transform: uppercase;
