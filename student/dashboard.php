@@ -62,9 +62,9 @@ require '../server.php';
                 $row=mysqli_fetch_assoc($run);
             ?>
             <h3 class="submit-property__headline">&gt;Student Dashboard</h3>
-              <div class="row">
-              <form method="POST" action="dashboard.php" enctype="multipart/form-data">
-          <div class="col-md-4">
+  <div class="row">
+    <form method="POST" action="dashboard.php" enctype="multipart/form-data">
+         <div class="col-md-4">
             <label for="profile-first-name" class="my-profile__label">First Name</label>
             <input type="text" name="fname" value="<?php echo $row['FirstName'] ?>" class="my-profile__field" id="profile-first-name" placeholder="e.g. Lorem">
 
@@ -83,25 +83,19 @@ require '../server.php';
 
 
 
-          </div><!-- .col -->
+        </div><!-- .col -->
 
-          <div class="col-md-5">
+        <div class="col-md-5">
             <label for="profile-introduce" class="my-profile__label">About Me</label>
             <textarea id="profile-introduce" required="" name="about" rows="5" class="my-profile__field" placeholder="Write something about yourself here..."><?php echo $row['about_me'] ?></textarea>
 
-            <img src="../hostel 2.jfif" height="200px" width="200px;">
-
-            <label for="profile-avatar" class="my-profile__label">Avatar</label>
-            <div class="my-profile__wrapper">
-              <input type="file" name="profile_picture">
-              <span><i class="ion-image"></i> Upload Your Avatar</span>
-            </div>
+      
 
             <button type="submit" name="submit_update" class="my-profile__submit">Save Changes</button>
-          </div><!-- .col -->
-        </form>
+        </div><!-- .col -->
+    </form>
                  
-                  </div>
+  </div>
                 
                 <!-- /row mt -->
                 	
