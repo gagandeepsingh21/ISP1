@@ -40,6 +40,7 @@ require '../server.php';
   <section id="container" >
      <?php include("includes/header.php");?>
       <?php include("includes/sidebar.php");?>
+      <?php include("includes/core_inc.php");?>
       <section id="main-content">
           <section class="wrapper">
           	<!-- <h3><i class="fa fa-angle-right"></i> Change Password</h3> -->
@@ -53,7 +54,7 @@ require '../server.php';
                       
 
 
-                      <form class="form-horizontal style-form" method="post" name="chngpwd" onSubmit="return valid();">
+                      <form class="form-horizontal style-form" method="post" name="chngpwd" action="change-password.php">
                           
 
                             <div class="form-group">
@@ -67,7 +68,7 @@ require '../server.php';
 
                             <div class="form-group">
                                 <div class="col-sm-10" style="padding-left:25% ">
-                                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" name="submit_new_password" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
 

@@ -12,6 +12,18 @@
                           <span>My profile</span>
                       </a>
                   </li>
+                  <li class="sub-menu">
+                      <a href="my_hostel.php" >
+                          <i class="fa fa-eye"></i>
+                          <span>My hostel</span>
+                      </a>
+                    </li>
+                    <li class="sub-menu">
+                      <a href="resubmit_hostel.php" >
+                          <i class="fa fa-eye"></i>
+                          <span>Resubmit hostel</span>
+                      </a>
+                    </li>
                    <li class="sub-menu">
                       <a href="submit_hostel.php" >
                           <i class="fa fa-eye"></i>

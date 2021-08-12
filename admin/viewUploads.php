@@ -43,6 +43,7 @@ require '../server.php';
 <section id="container" >
 <?php include("includes/header.php");?>
 <?php include("includes/sidebar.php");?>
+<?php include("includes/core_inc.php");?>
  <!-- include datafile -->
   <section id="main-content">
     <section class="wrapper">
@@ -64,34 +65,7 @@ require '../server.php';
                               </thead>
                               <tbody>
                                   <!-- function to populate should be here -->
-                                <div class="manage-list__item">
-                                    <tr class="manage-list__item-container">
-                                        <td>1</td>
-                                        <td class="manage-list__item-img">
-                                            <img src="../hostel 2.jfif" alt="" class="listing__img" width="150" height="150">
-                                        </td>
-                                        
-                                        <td class="manage-list__item-detail">
-                                            <h4 class="blog"><a href="#">Hostel name</a></h4>
-                                            <p class="listing__location"><i class="fa fa-building"></i> Hostel address</p>
-                                            <p class="listing__price"><i class="fa fa-money"></i> #Price</p>
-                                            <p class="listing__price"><i class="fa fa-list"></i> rules</p>
-                                            <p class="listing__price"><i class="fa fa-list"></i> room type</p>
-                                            <p class="property__details-item"><span class="property__details-item--cat">Services offered:</span></p>
-                                        </td>
-
-                                        <td class="manage-list__expire-date">July 29, 2021</td>
-
-                                        <td class="manage-list__action">
-                                            <p>Landlord name</p>
-                                            <p>Phone number</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Checkout Owner</a>
-                                            <a href="#" class="btn btn-danger btn-sm">DisApprove</a>
-            	                        </td>
-
-                                    </tr>
-
-                                </div>
+                                <?php echo approved_hostel(); ?>
 
                               </tbody>
                           </table>

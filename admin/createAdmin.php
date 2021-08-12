@@ -103,7 +103,7 @@ require '../server.php';
                           
           	
           	
-		</section><! --/wrapper -->
+		</section><!--/wrapper -->
       </section><!-- /MAIN CONTENT -->
     <?php include("includes/footer.php");?>
   </section>

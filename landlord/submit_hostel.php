@@ -68,7 +68,13 @@ require '../server.php';
                                 <div class="col-md-4">
                                     <div class="submit-property__group">
                                         <label for="property-type" class="submit-property__label">Hostel Type *</label>
-                                        <input type="text"  id="property-price" name="hos_type" required>
+                                        <!-- <input type="text"  id="property-price" name="hos_type" required> -->
+                                        <select class="ht-field" id="property-type" name="hos_type" required>
+                                            <option disabled="disabled">Choose room Types</option>
+                                            <option >Private room</option>
+                                            <option >Shared room</option>
+                                            
+                                        </select>
                                     </div><!-- .submit-property__group -->
                                 </div><!-- .col -->
 

@@ -3,9 +3,8 @@ require '../server.php';
   
 
   if (!isset($_SESSION['id'])) {
-  	// $_SESSION['msg'] = "You must log in first";
+  	$_SESSION['msg'] = "You must log in first";
   	header('location:../login.php');
-    
   }
   if (isset($_POST['logout'])) {
   	session_destroy();
@@ -23,22 +22,22 @@ require '../server.php';
     <!-- <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"> -->
 
-    <title>Landlord Dashboard</title>
+    <title>Resubmit hostel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">     -->
     
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style2.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
-    <script src="assets/js/chart-master/Chart.js"></script>
+    
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,8 +47,8 @@ require '../server.php';
   </head>
 
   <body>
-    <!-- <?php 
-       echo $_SESSION['id'];
+    <!-- <?php
+      echo $_SESSION['id'];
     ?> -->
   <section id="container" >
 <?php include("includes/header.php");?>
@@ -57,49 +56,21 @@ require '../server.php';
 <?php include("includes/core_inc.php");?>
       <section id="main-content">
           <section class="wrapper">
-            <?php
-                require '../config.php';
-                $user_ID=$_SESSION['id'];
-                $qu="SELECT * FROM `details` WHERE `ID`='$user_ID'";
-                $run=mysqli_query($con,$qu);
-                $row=mysqli_fetch_assoc($run);
-            ?>
-              <div class="row">
-              <form method="POST" action="dashboard.php" enctype="multipart/form-data">
-          <div class="col-md-4">
-            <label for="profile-first-name" class="my-profile__label">First Name</label>
-            <input type="text" name="fname" value="<?php echo $row['FirstName'] ?>" class="my-profile__field" id="profile-first-name">
 
-            <label for="profile-first-name" class="my-profile__label">Last Name</label>
-            <input type="text" name="lname" value="<?php echo $row['LastName'] ?>" class="my-profile__field" id="profile-first-name">
-
-            
-
-            <label for="profile-number" class="my-profile__label">Phone Number*</label>
-            <input type="number" value="<?php echo $row['phone_no'] ?>"  required onkeypress="if(this.value.length==12)return false;" name="phone" placeholder="07XXXXXXXX" class="my-profile__field" id="profile-number">
-
-           
-
-            <label for="profile-email" class="my-profile__label">Email*</label>
-            <input type="email" value="<?php echo $row['Email']?>" required name="email" class="my-profile__field" id="profile-email">
-
-
-
-          </div><!-- .col -->
-
-          <div class="col-md-5">
-            <label for="profile-introduce" class="my-profile__label">About Me</label>
-            <textarea id="profile-introduce" required name="about"   rows="10" class="my-profile__field"><?php echo $row['about_me'] ?></textarea>
-
-
-            <input type="submit" name="submit_update" class="my-profile__submit" value="Update profile">
-            
-          </div><!-- .col -->
-        </form>
-                 
-                  </div>
-                </div>
-                </div><!-- /row mt -->
+            <div class="row">
+                <div class="col-md-9" >
+                    
+                    <ul class="manage-list manage-list--my-property">
+                     <li class="manage-list__header">
+                          <p style="color:black; margin-right:auto; margin-left:auto; font-size : 20px;;">Resubmit hostel</p>
+                        </li>
+                        <div style="max-height: 500px; overflow-y: scroll;">
+                             <?php echo resubmit_hostel(); ?>
+                        </div>     
+                    </ul>
+               
+                </div><!-- .col -->
+            </div><!-- /row mt -->
                 	
           </section>
           

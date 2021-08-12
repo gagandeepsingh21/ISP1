@@ -17,10 +17,12 @@
         $qu="UPDATE `details` SET `FirstName`='$fname',`LastName`='$lname',`Email`='$email',`phone_no`='$phone',`about_me`='$about' WHERE `ID`='$user_id'";
         
         if (mysqli_query($con,$qu)) {
-            header("Location:dashboard.php");
+            header("Location:../login.php");
             
             
         }else{
+            echo "<script>alert('Something went wrong, try again')
+                   </script>";
             header("Location:dashboard.php");
             
         }
@@ -140,12 +142,123 @@ if (!empty($_FILES["feat_image"]["name"])) {
                         </script>
               <?php  }
 
-            }// end for forloop
+            }// end for forloop    
 
         } //end for multi image upload
 
 }
 ?>
+
+<?php 
+//this function is to populate hostels uploaded by the logged user
+    function all_hostel(){
+        require 'config.php';
+        $query = "SELECT * FROM `hos_details` WHERE `isActive`= 0 AND `agent_active`=0 AND `agent_id` = '" . $_SESSION['id'] . "'  ORDER by `ID` DESC";
+        $query_run = mysqli_query($con, $query);
+        $query_row = mysqli_num_rows($query_run);
+        if ($query_row == 0) {
+            echo "None of your hostels are Approved Yet";
+        }else {
+            while ($row = mysqli_fetch_array($query_run)) {
+                ?>
+                <!--code for showing hostel -->
+                <li class="manage-list__item">
+                    <div class="manage-list__item-container">
+                        <div class="manage-list__item-img">
+                            <a href="">
+                                <img src="<?php echo $row['ft_img'] ?>" alt="<?php echo $row['hos_name'].' image' ?>" width="170px" height="200px">
+                            </a>
+                        </div>
+                        <div class="manage-list__item-detail">
+                            <h3 class="listing__title"><a href="#"><?php echo $row['hos_name']; ?></a></h3>
+                            <p class="listing_location">Location: <?php echo $row['location'] ?></p>
+                            <p class="listing_price">Price: KSH <?php echo $row['price'] ?></p>
+                        </div>
+                    </div><!--end for manage-list container -->
+                    <div class="manage-list__expire-date"><!-- div for date -->
+                        <?php echo $row['uploaded_on'] ?>
+                    </div><!--end for date div -->
+
+                    <div class="manage-list__action">
+                        <a href="#" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a><br>
+                        <a href="includes/remove_hostel.php?remove=<?php echo $row['ID'] ?>" class="remove" id="#"><i class="fa fa-times" aria-hidden="true"></i> Remove</a>
+                    </div>
+
+                </li><!--end for li -->
+           <?php }
+        }
+    }
+    ?>
+
+    <!-- update password for landlord -->
+    <?php 
+    if (isset($_POST['submit_new_password'])) {
+        change_pass();
+    }
+    function change_pass(){
+        require 'config.php';
+        $newpass=$_POST['newpassword'];
+        $newpass1=md5($newpass);
+        $newid=$_SESSION['id'];
+        $q="UPDATE `details` set `Password`='$newpass1' where `ID`='$newid'";
+        if (mysqli_query($con,$q)) {
+            ?>
+            <script>
+                alert("Password has been updated, Login again!")
+            </script>
+        <?php
+      header("Location:../login.php");
+  }else
+  ?> 
+    <script>
+        alert("oppsii, we ran into a problem updating the password, kindly try again")
+    </script>
+  <?php  }
+   ?>
+
+<!-- function to resubmit hostel -->
+<?php 
+    function resubmit_hostel(){
+        require 'config.php';
+        $query = "SELECT * FROM `hos_details` WHERE `agent_active`= 1 AND `agent_id` = '" . $_SESSION['id'] . "'  ORDER by `ID` DESC";
+        $query_run = mysqli_query($con, $query);
+        $query_row = mysqli_num_rows($query_run);
+        if ($query_row == 0) {
+            echo "Nothing to resubmit here";
+        }else {
+            while ($row = mysqli_fetch_array($query_run)) {
+                ?>
+                <!--code for showing hostel -->
+                <li class="manage-list__item">
+                    <div class="manage-list__item-container">
+                        <div class="manage-list__item-img">
+                            <a href="">
+                                <img src="<?php echo $row['ft_img'] ?>" alt="<?php echo $row['hos_name'].' image' ?>" width="170px" height="200px">
+                            </a>
+                        </div>
+                        <div class="manage-list__item-detail">
+                            <h3 class="listing__title"><a href="#"><?php echo $row['hos_name']; ?></a></h3>
+                            <p class="listing_location">Location: <?php echo $row['location'] ?></p>
+                            <p class="listing_price">Price: KSH <?php echo $row['price'] ?></p>
+                        </div>
+                    </div><!--end for manage-list container -->
+                    <div class="manage-list__expire-date"><!-- div for date -->
+                        <?php echo $row['uploaded_on'] ?>
+                    </div><!--end for date div -->
+
+                    <div class="manage-list__action">
+                        <a href="includes/remove_hostel.php?add_back=<?php echo $row['ID'] ?>" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Add back</a>
+                    </div>
+
+                </li><!--end for li -->
+           <?php }
+        }
+    }
+    ?>
+
+
+
+
 
       
 
