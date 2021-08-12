@@ -132,6 +132,9 @@ function approved_hostel(){
 
                     
                     <td class="manage-list__action">
+                               <p>Landlord name: <?php echo $row['OwnerName'] ?></p>
+                                <p> Landlord Phone number: <?php echo $row['OwnerNumber'] ?></p>
+                            
 
                         <a href="includes/approve_hostel.php?disapprove=<?php echo$row['ID'] ?>" class="btn btn-danger btn-sm" >Disapprove</a>
                         <a href="includes/approve_hostel.php?owner=<?php echo$row['agent_id'] ?>" class="btn btn-success btn-sm" >Check out owner</a>
