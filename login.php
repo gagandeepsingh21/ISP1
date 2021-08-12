@@ -35,9 +35,10 @@
 
 
         <form action="login.php" method="post">
-            	<?php include('errors.php'); ?>
+            	
             <div class="loginbox">
                 <h1>Log in</h1>
+               <h4 style=" color:red;"> <?php include('errors.php'); ?></h4><br>
                 <label for="Username"> Username</label>
                 <input type="text" name="email" placeholder="Username" id="" required><br><br>
                 <label for="Password">Password</label>

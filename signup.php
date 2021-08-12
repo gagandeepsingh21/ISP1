@@ -258,7 +258,7 @@ ul li {
         .btn:hover {
             background: blue;
             transition: 0.5s ease-in-out;
-            width:300px;
+            width:280px;
         }
 
         .input {
