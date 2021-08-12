@@ -61,6 +61,8 @@ if (isset($_POST['submit_property'])) {
 function upload_hos(){
     require 'config.php';
     $user_id=$_SESSION['id'];
+    $name=$_POST['name1'];
+    $number=$_POST['number1'];
     $hos_title=$_POST['title'];
     $hos_type=$_POST['hos_type'];
     $hos_price=$_POST['price'];
@@ -87,7 +89,7 @@ if (!empty($_FILES["feat_image"]["name"])) {
 
           
 
-          $quer="INSERT INTO `hos_details`(`agent_id`, `hos_name`, `hos_type`, `price`, `description`, `ft_img`, `location`, `friendly_add`, `services`, `rules`) VALUES ('$user_id','$hos_title','$hos_type','$hos_price','$hos_des','$targetPathFeatImg','$hos_location','$hos_fri_add','$hos_services','$hos_rul')";
+          $quer="INSERT INTO `hos_details`(`agent_id`,`OwnerName`,`OwnerNumber`, `hos_name`, `hos_type`, `price`, `description`, `ft_img`, `location`, `friendly_add`, `services`, `rules`) VALUES ('$user_id','$name','$number','$hos_title','$hos_type','$hos_price','$hos_des','$targetPathFeatImg','$hos_location','$hos_fri_add','$hos_services','$hos_rul')";
 
             if ($query_run = mysqli_query($con, $quer)) {
                 

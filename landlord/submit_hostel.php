@@ -63,6 +63,14 @@ require '../server.php';
                                 <label for="property-title" class="submit-property__label">Hostel Name *</label>
                                 <input type="text"  name="title" id="property-title" placeholder="Name of house" required>
                             </div><!-- .submit-property__group -->
+                            <div class="submit-property__group">
+                                <label for="property-title" class="submit-property__label">Owner Name *</label>
+                                <input type="text"  name="name1" id="property-title" placeholder="Name of the Owner" required>
+                            </div><!-- .submit-property__group -->
+                            <div class="submit-property__group">
+                                <label for="property-title" class="submit-property__label">Owner Phone Number *</label>
+                                <input type="Number"  name="number1" id="property-title" placeholder=" Owner Phone Number" required>
+                            </div><!-- .submit-property__group -->
 
                             <div class="row">
                                 <div class="col-md-4">
