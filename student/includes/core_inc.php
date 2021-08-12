@@ -147,6 +147,32 @@ if (!empty($_FILES["feat_image"]["name"])) {
 }
 ?>
 
+ <!-- update password for landlord -->
+    <?php 
+    if (isset($_POST['submit_new_password'])) {
+        change_pass();
+    }
+    function change_pass(){
+        require 'config.php';
+        $newpass=$_POST['newpassword'];
+        $newpass1=md5($newpass);
+        $newid=$_SESSION['id'];
+        $q="UPDATE `details` set `Password`='$newpass1' where `ID`='$newid'";
+        if (mysqli_query($con,$q)) {
+            ?>
+            <script>
+                alert("Password has been updated, Login again!")
+            </script>
+        <?php
+      header("Location:../login.php");
+  }else
+  ?> 
+    <script>
+        alert("oppsii, we ran into a problem updating the password, kindly try again")
+    </script>
+  <?php  }
+   ?>
+
 <?php
 function approved_hostel(){
         require 'config.php';

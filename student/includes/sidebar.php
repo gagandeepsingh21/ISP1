@@ -30,7 +30,7 @@
                           <span>Account Setting</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="changepwd.php">Change Password</a></li>
+                          <li><a  href="change-password.php">Change Password</a></li>
                            
                       </ul>
                   </li>
