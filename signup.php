@@ -22,6 +22,7 @@
     background: linear-gradient(120deg,#2980b9,#8e44ad);
 
 }
+
 ul li {
     list-style: none;
    
@@ -59,12 +60,14 @@ ul li {
     margin-left:25px;
     padding:10px;
     text-decoration: none;
+    background:none;
      
 }
 .nav-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 
@@ -111,6 +114,19 @@ p{
         cursor: pointer;
         background:none
     }
+    
+        ul {
+            list-style-type: none;
+           
+
+
+        }
+
+        ul li {
+            display: inline;
+            padding: 20px;
+
+        }
      .bar{
    display:block;
    height: 3px;
@@ -165,7 +181,7 @@ p{
         text-align: center;
         transition: 0.7s ease-in-out;
         z-index: 10000;
-        
+        background:linear-gradient(120deg,#2980b9,#8e44ad);
     }
 
     .nav-menu.active {
@@ -227,6 +243,8 @@ p{
 
         ul {
             list-style-type: none;
+            background:none;
+
 
         }
 
