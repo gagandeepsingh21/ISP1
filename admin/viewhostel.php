@@ -59,6 +59,7 @@ $hosid = $_GET['hosid'];
     <?php include("includes/header.php"); ?>
     <?php include("includes/sidebar.php"); ?>
     <?php include("includes/config.php"); ?>
+    <?php include("includes/core_inc.php")?>
     <section id="main-content">
       <section class="wrapper">
 

@@ -35,6 +35,7 @@ body {
     background:linear-gradient(to top, rgba(255,255,255,0.5),rgba(255,255,255,0.5));
 }
 
+
 .background-text {
   text-align: center;
   position: absolute;
@@ -63,6 +64,9 @@ body {
     cursor:pointer;
     background:linear-gradient(to top, rgba(255,255,255,0.5),rgba(255,255,255,0.5));
 }
+a{
+    background:none;
+}
 
 .background-text {
   text-align: center;
@@ -74,6 +78,11 @@ body {
 }
 .h1{
     font-size:25px;
+    background:none;
+}
+.h4{
+
+    background:none;
 }
 .nav-logo{
     font-size:20px
@@ -110,8 +119,8 @@ body{
 
 <div class="background-image">
   <div class="background-text fade fadeOut">
-    <h1 style="font-size:50px" class="h1">Looking for an hostel?</h1><br>
-    <h4>Click below to log in to the sytem to choose the hostel of your choice! </h4>
+    <h1 style="font-size:50px; background:none;" class="h1">Looking for an hostel?</h1><br>
+    <h4 style=" background:none;">Click below to log in to the sytem to choose the hostel of your choice! </h4>
      <a href="login.php"><button class="btn1"> click here</button></a>
 
   </div>

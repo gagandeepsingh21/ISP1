@@ -19,9 +19,9 @@
     margin:0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    background: linear-gradient(120deg,#2980b9,#8e44ad);
 
 }
-
 ul li {
     list-style: none;
    
@@ -29,108 +29,110 @@ ul li {
  li a{
      text-decoration:none;
      font-size: 16px;
+   
+     
  }
+
+ 
  .navbar{
     display:flex;
     align-items: center;
     justify-content: space-around;
     padding: 5px 5px;
     height: 80px;
-    background-color: salmon;
+ 
  }
+
 .nav-logo{
     padding: 10px 10px;
     text-decoration: none;
-    color: blue;
+    color: white;
     font-size: 30px;
+    background: none;
+}
+.nav-item a{
+    color: white;
+    background: none;
 }
 
 .nav-item{
     margin-left:25px;
     padding:10px;
     text-decoration: none;
+     
 }
-
-.nav-item a{
-    color: white;
-}
-
 .nav-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-}
-.nav-link a{
-    color:white;
-}
-.nav-link{
-    margin-left: auto;
-    padding: 15px;
-    font-size: 16px;
-    background-color: blue;
-    color:white;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.nav-link:hover{
-    font-size: 16px;
-    color: white;
-    border-radius: 5px;
-    padding: 17px;
-    transition: 0.3s ease-in-out;
-    
-}
 
 .hamburger{
     display: none;
     cursor:pointer;
    
+   
 }
-
 .hamburger:hover{
     cursor:pointer;
 } 
-
 .bar{
    display:block;
    height: 3px;
    width:25px;
-   background-color: black;
+   background:none;
+   color:white;
    margin: 5px;
    
-}
 
+}
 .bar:hover{
    display:block;
    height: 3px;
    width:25px;
-   background-color: black;
+   background:none;
    margin: 5px;
    cursor:pointer;
    
 
 }
+a{
+    background:none;
+    color:blue;
+}
+p{
+    background:none;
+    color:black;
+}
 @media only screen and (max-width: 768px){
     .hamburger{
         display: block;
         cursor: pointer;
+        background:none
     }
-    .nav-menu{
-        position: fixed;
-        top:-100%;
-        margin-top:15%;
-        flex-direction: column;
-        background-color:salmon;
-        color:white;
-        width: 100%;
-        text-align: center;
-        transition: 0.7s ease-in-out;
-        z-index: 10000;
-    
-        
-    }
+     .bar{
+   display:block;
+   height: 3px;
+   width:25px;
+   background:white;
+   background-color:none;
+   margin: 5px;
+   
+
+}
+.bar:hover{
+   display:block;
+   height: 3px;
+   width:25px;
+   background:white;
+   margin: 5px;
+   cursor:pointer;
+   
+
+}
+
+
             .nav-logo{
             font-size:20px;
         }
@@ -153,11 +155,24 @@ ul li {
             width:200px;
         }
 
+   .nav-menu{
+        position: fixed;
+        top:-110%;
+        margin-top:15%;
+        flex-direction: column;
+        color:white;
+        width: 100%;
+        text-align: center;
+        transition: 0.7s ease-in-out;
+        z-index: 10000;
+        
+    }
+
     .nav-menu.active {
         top: 0;
     }
 
-        .nav-item {
+    .nav-item {
         margin: 1rem 0;
         border-bottom: 1px solid white;
         width:120%;
@@ -185,20 +200,25 @@ ul li {
             text-align: center;
             text-decoration: underline;
             font-weight: bold;
+            
 
         }
 
         form {
+            margin-top:15px;
             text-align: center;
+            background:white;
         }
-        .login{
-        text-decoration: underline;
-        color:blue;
+        label{
+            color:black;
+            background: none;
+            marg
         }
-        .login:visited{
-        text-decoration: underline;
-        color: blue;
+
+        select{
+            background:none;
         }
+      
         h3 {
             text-align: right;
             line-height: 20px;
@@ -218,15 +238,15 @@ ul li {
 
         .signup-box {
             position: absolute;
-            background: rgb(218, 181, 213);
+            background:white;
             top: 50%;
             left: 48%;
             transform: translate(-48%, -27%);
             color: #fff;
-            width: 350px;
+            width: 400px;
             height:fit-content;
             padding: 14px 40px;
-            border-radius: 30px;
+            border-radius: 10px;
             box-sizing: border-box;
             margin-top:50px;
             overflow: hidden;
@@ -234,6 +254,8 @@ ul li {
 
         }
         .signup-box h1{
+            background:white;
+            color:black;
             text-align: center;
             font-size: 30px;
             padding: 15px;
@@ -262,7 +284,8 @@ ul li {
         }
 
         .input {
-            width: 50px
+            width: 50px;
+            margin-top:5px;
         } 
 
         input[type=text],
@@ -280,11 +303,14 @@ ul li {
             border-bottom: #18e018 dotted #fff;
             color: #fff;
             border-radius: 5px;
-            margin: 5px;
+            margin-top: 10px;
             font-weight: bold;
 
         }
 
+        .error{
+            background:none;
+        }
 
 
 
@@ -324,14 +350,21 @@ ul li {
       
 
       <form class="form-signup" action="signup.php" method="post">
-          <?php include('errors.php'); ?>
-            Firstname:<input type="text" placeholder="Firstnname" name="fname" value=""><br><br>
-            Lastname:<input type="text" placeholder="Lastnname" name="lname" value=""><br><br>
-            Phone number: <input type="number" name="phone_number" placeholder="Phone number" value=""><br><br>
-            Email:<input type="email" placeholder="Email" name="email" value=""><br><br>
-            Password:<input type="Password" placeholder="Password" name="pass1" value=""><br><br>
-            Confirm Password:<input type="Password" placeholder="Confirm password" name="pass2" value=""><br><br>
-            User type: <select name="type" id="sel">
+          <h4 class="error" style="color:red;"> <?php include('errors.php'); ?></h4><br>
+            <label for="Firstname">Firstname:</label>
+            <input type="text" placeholder="Firstnname" name="fname" value=""><br><br>
+            <label for="lastname">Lastname:</label>
+            <input type="text" placeholder="Lastnname" name="lname" value=""><br><br>
+            <label for="phone number">Phone number:</label>
+             <input type="number" name="phone_number" placeholder="Phone number" value=""><br><br>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Email" name="email" value=""><br><br>
+            <label for="password">Password:</label>
+            <input type="Password" placeholder="Password" name="pass1" value=""><br><br>
+            <label for="confirm password">Confirm Password:</label>
+            <input type="Password" placeholder="Confirm password" name="pass2" value=""><br><br>
+            <label for="User type">User type: </label>
+            <select name="type" id="sel">
                 <option value="Student">Student</option>
                 <option value="landlord">Landlord</option>
             </select><br><br>
@@ -341,7 +374,7 @@ ul li {
             <button class="btn" type="submit" name="reg_user">Signup</button><br><br>
             <button class="btn" type="reset" name="reset">Reset</button><br><br>
 
-            Already have an account? <a href="login.php" class="login">click here to log in</a>
+           <p> Already have an account?</p> <a href="login.php" class="login">click here to log in</a>
             
         </form>
 

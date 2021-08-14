@@ -38,7 +38,7 @@
             	
             <div class="loginbox">
                 <h1>Log in</h1>
-               <h4 style=" color:red;"> <?php include('errors.php'); ?></h4><br>
+               <h4 class="error"> <?php include('errors.php'); ?></h4><br>
                 <label for="Username"> Username</label>
                 <input type="text" name="email" placeholder="Username" id="" required><br><br>
                 <label for="Password">Password</label>
