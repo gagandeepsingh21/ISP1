@@ -57,7 +57,7 @@ ul li {
 .nav-menu{
     display: flex;
     justify-content: space-between;
-   
+   background: none;
     align-items: center;
 }
 .nav-link a{
@@ -154,7 +154,7 @@ p>a{
 	top: 60%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-    border-radius: 10%;
+    border-radius: 10px;
 	overflow: hidden;
 	box-sizing: border-box;
 	z-index: 2;
@@ -323,6 +323,7 @@ ul li {
         text-align: center;
         transition: 0.7s ease-in-out;
         z-index: 10000;
+        background:linear-gradient(120deg,#2980b9,#8e44ad);;
         
     }
 
@@ -335,6 +336,7 @@ ul li {
         border-bottom: 1px solid white;
         width:120%;
         padding-bottom:20px;
+
          
     }
 

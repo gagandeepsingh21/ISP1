@@ -90,6 +90,32 @@ ul li {
    
 
 }
+
+        .signup-box {
+            position: absolute;
+            background:white;
+            top: 48%;
+            left: 48%;
+            transform: translate(-48%, -27%);
+            color: #fff;
+            width: 450px;
+            height:fit-content;
+            padding: 14px 40px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-top:50px;
+            overflow: hidden;
+            margin-bottom:100px;
+
+        }
+        .signup-box h1{
+            background:white;
+            color:black;
+            text-align: center;
+            font-size: 30px;
+            padding: 15px;
+            border-bottom: 1px solid silver;
+        }
 .bar:hover{
    display:block;
    height: 3px;
@@ -98,7 +124,6 @@ ul li {
    margin: 5px;
    cursor:pointer;
    
-
 }
 a{
     background:none;
@@ -183,6 +208,23 @@ p{
         z-index: 10000;
         background:linear-gradient(120deg,#2980b9,#8e44ad);
     }
+            .signup-box {
+            position: absolute;
+            background:white;
+            top: 48%;
+            left: 48%;
+            transform: translate(-48%, -27%);
+            color: #fff;
+            width: 380px;
+            height:fit-content;
+            padding: 14px 40px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-top:50px;
+            overflow: hidden;
+            margin-bottom:100px;
+
+        }
 
     .nav-menu.active {
         top: 0;
@@ -254,31 +296,6 @@ p{
 
         }
 
-        .signup-box {
-            position: absolute;
-            background:white;
-            top: 50%;
-            left: 48%;
-            transform: translate(-48%, -27%);
-            color: #fff;
-            width: 400px;
-            height:fit-content;
-            padding: 14px 40px;
-            border-radius: 10px;
-            box-sizing: border-box;
-            margin-top:50px;
-            overflow: hidden;
-            margin-bottom:100px;
-
-        }
-        .signup-box h1{
-            background:white;
-            color:black;
-            text-align: center;
-            font-size: 30px;
-            padding: 15px;
-            border-bottom: 1px solid silver;
-        }
         
 
         .btn {
