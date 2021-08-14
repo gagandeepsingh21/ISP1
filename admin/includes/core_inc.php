@@ -44,7 +44,7 @@ if (isset($_POST['submit_admin'])) {
         require 'config.php';
         $newpass=$_POST['newpassword'];
         $newpass1=md5($newpass);
-        $newid=$_SESSION['id'];
+        $newid=$_SESSION['id_admin'];
         $q="UPDATE `details` set `Password`='$newpass1' where `ID`='$newid'";
         if (mysqli_query($con,$q)) {
             ?>
@@ -132,9 +132,6 @@ function approved_hostel(){
 
                     
                     <td class="manage-list__action">
-                               <p>Landlord name: <?php echo $row['OwnerName'] ?></p>
-                                <p> Landlord Phone number: <?php echo $row['OwnerNumber'] ?></p>
-                            
 
                         <a href="includes/approve_hostel.php?disapprove=<?php echo$row['ID'] ?>" class="btn btn-danger btn-sm" >Disapprove</a>
                         <a href="includes/approve_hostel.php?owner=<?php echo$row['agent_id'] ?>" class="btn btn-success btn-sm" >Check out owner</a>

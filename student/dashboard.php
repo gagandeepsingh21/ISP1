@@ -8,7 +8,7 @@ require '../server.php';
     
   }
   if (isset($_POST['logout'])) {
-  	session_destroy();
+  
   	unset($_SESSION['id']);
   	header("location:../login.php");
   }

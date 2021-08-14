@@ -6,7 +6,7 @@
 
     function save_profile(){
         require 'config.php';
-        $user_id=$_SESSION['id'];
+        $user_id=$_SESSION['id_landlord'];
         $fname=$_POST['fname'];
         $lname=$_POST['lname'];
         $phone=$_POST['phone'];
@@ -60,9 +60,7 @@ if (isset($_POST['submit_property'])) {
 
 function upload_hos(){
     require 'config.php';
-    $user_id=$_SESSION['id'];
-    $name=$_POST['name1'];
-    $number=$_POST['number1'];
+    $user_id=$_SESSION['id_landlord'];
     $hos_title=$_POST['title'];
     $hos_type=$_POST['hos_type'];
     $hos_price=$_POST['price'];
@@ -89,7 +87,7 @@ if (!empty($_FILES["feat_image"]["name"])) {
 
           
 
-          $quer="INSERT INTO `hos_details`(`agent_id`,`OwnerName`,`OwnerNumber`, `hos_name`, `hos_type`, `price`, `description`, `ft_img`, `location`, `friendly_add`, `services`, `rules`) VALUES ('$user_id','$name','$number','$hos_title','$hos_type','$hos_price','$hos_des','$targetPathFeatImg','$hos_location','$hos_fri_add','$hos_services','$hos_rul')";
+          $quer="INSERT INTO `hos_details`(`agent_id`, `hos_name`, `hos_type`, `price`, `description`, `ft_img`, `location`, `friendly_add`, `services`, `rules`) VALUES ('$user_id','$hos_title','$hos_type','$hos_price','$hos_des','$targetPathFeatImg','$hos_location','$hos_fri_add','$hos_services','$hos_rul')";
 
             if ($query_run = mysqli_query($con, $quer)) {
                 
@@ -155,7 +153,7 @@ if (!empty($_FILES["feat_image"]["name"])) {
 //this function is to populate hostels uploaded by the logged user
     function all_hostel(){
         require 'config.php';
-        $query = "SELECT * FROM `hos_details` WHERE `isActive`= 0 AND `agent_active`=0 AND `agent_id` = '" . $_SESSION['id'] . "'  ORDER by `ID` DESC";
+        $query = "SELECT * FROM `hos_details` WHERE `isActive`= 0 AND `agent_active`=0 AND `agent_id` = '" . $_SESSION['id_landlord'] . "'  ORDER by `ID` DESC";
         $query_run = mysqli_query($con, $query);
         $query_row = mysqli_num_rows($query_run);
         if ($query_row == 0) {
@@ -182,7 +180,7 @@ if (!empty($_FILES["feat_image"]["name"])) {
                     </div><!--end for date div -->
 
                     <div class="manage-list__action">
-                        <a href="#" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a><br>
+                        <a href="update_hostel.php?edit_hostel=<?php echo $row['ID'] ?>" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a><br>
                         <a href="includes/remove_hostel.php?remove=<?php echo $row['ID'] ?>" class="remove" id="#"><i class="fa fa-times" aria-hidden="true"></i> Remove</a>
                     </div>
 
@@ -201,7 +199,7 @@ if (!empty($_FILES["feat_image"]["name"])) {
         require 'config.php';
         $newpass=$_POST['newpassword'];
         $newpass1=md5($newpass);
-        $newid=$_SESSION['id'];
+        $newid=$_SESSION['id_landlord'];
         $q="UPDATE `details` set `Password`='$newpass1' where `ID`='$newid'";
         if (mysqli_query($con,$q)) {
             ?>
@@ -222,7 +220,7 @@ if (!empty($_FILES["feat_image"]["name"])) {
 <?php 
     function resubmit_hostel(){
         require 'config.php';
-        $query = "SELECT * FROM `hos_details` WHERE `agent_active`= 1 AND `agent_id` = '" . $_SESSION['id'] . "'  ORDER by `ID` DESC";
+        $query = "SELECT * FROM `hos_details` WHERE `agent_active`= 1 AND `agent_id` = '" . $_SESSION['id_landlord'] . "'  ORDER by `ID` DESC";
         $query_run = mysqli_query($con, $query);
         $query_row = mysqli_num_rows($query_run);
         if ($query_row == 0) {
@@ -258,9 +256,33 @@ if (!empty($_FILES["feat_image"]["name"])) {
     }
     ?>
 
+    <!-- function to update edited hostel -->
+    <?php 
+    if (isset($_POST["update_hostel"])) {
+        update_hostel();
+    }
+    
+    function update_hostel(){
 
-
-
-
-      
-
+        require 'config.php';
+        $hosid=$_POST['hos_id'];
+        $hos_name=$_POST['title'];
+        $hos_type=$_POST['hos_type'];
+        $hos_price=$_POST['price'];
+        $hos_des=$_POST['description'];
+        $hos_loc=$_POST['location'];
+        $hos_add=$_POST['address'];
+        $hos_services=$_POST['services'];
+        $hos_rule=$_POST['rules'];
+        $query_update="UPDATE `hos_details` set `hos_name`='$hos_name',`hos_type`='$hos_type',`price`='$hos_price',`description`='$hos_des',`location`='$hos_loc',`friendly_add`='$hos_add',`services`='$hos_services',`rules`='$hos_rule' where `ID`='$hosid'";
+        $query3=mysqli_query($con,$query_update);
+        if ($query3) {
+            echo '<script>alert("Hostel has been updated!")
+            window.location.href = "my_hostel.php"; </script>';
+        }else{
+            echo "<script>alert('Unkown error occured')
+            window.history.back() </script>";
+        }
+    }
+    
+    ?>
