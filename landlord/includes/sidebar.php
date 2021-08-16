@@ -5,7 +5,7 @@
               
   
  
-                  <h3 class="centered" style=" color:#0a0b0e; ">Welcome <br> <?php echo $_SESSION['username'] ?> </h3>
+                  <h3 class="centered" style=" color:#0a0b0e; ">Welcome <br> <?php echo $_SESSION['username_landlord'] ?> </h3>
                   <li class="mt">
                       <a href="dashboard.php">
                           <i class="fa fa-dashboard"></i>

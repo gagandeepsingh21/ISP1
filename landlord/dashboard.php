@@ -59,7 +59,7 @@ require '../server.php';
           <section class="wrapper">
             <?php
                 require '../config.php';
-                $user_ID=$_SESSION['id'];
+                $user_ID=$_SESSION['id_landlord'];
                 $qu="SELECT * FROM `details` WHERE `ID`='$user_ID'";
                 $run=mysqli_query($con,$qu);
                 $row=mysqli_fetch_assoc($run);

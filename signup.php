@@ -184,7 +184,7 @@ p{
             background: blue;
             color: #fff;
             font-size: 18px;
-            border-radius: 20px;
+            border-radius: 5px;
             width: 200px;
             cursor: pointer;
 
@@ -306,7 +306,7 @@ p{
             width:75px;
             color: #fff;
             font-size: 18px;
-            border-radius: 20px;
+            border-radius: 5px;
             width: 275px;
             cursor: pointer;
 

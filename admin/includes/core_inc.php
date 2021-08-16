@@ -36,6 +36,39 @@ if (isset($_POST['submit_admin'])) {
     }
     ?>
 
+<?php
+
+    if (isset($_POST['submit_update'])) {
+        save_profile();
+    }
+
+    function save_profile(){
+        require 'config.php';
+        $user_id=$_SESSION['id_admin'];
+        $fname=$_POST['fname'];
+        $lname=$_POST['lname'];
+        $phone=$_POST['phone'];
+        $email=$_POST['email'];
+        $about=$_POST['about'];
+        
+
+        $qu="UPDATE `details` SET `FirstName`='$fname',`LastName`='$lname',`Email`='$email',`phone_no`='$phone',`about_me`='$about' WHERE `ID`='$user_id'";
+        
+        if (mysqli_query($con,$qu)) {
+            header("Location:../login.php");
+            
+            
+        }else{
+            echo "<script>alert('Something went wrong, try again')
+                   </script>";
+            header("Location:dashboard.php");
+            
+        }
+
+    }
+
+?>
+
     <?php 
     if (isset($_POST['submit_new_password'])) {
         change_pass();
