@@ -103,27 +103,27 @@ $hosid = $_GET['hosid'];
 
               <div class="property__feature"> <!-- display image part -->
 
-                <?php 
-                  $query2="SELECT * from `img_table` where `hos_id`='$hosid'";
-                  $query2_run=mysqli_query($con,$query2);
-                  
-                  while ($res=mysqli_fetch_array($query2_run)) {
-                    ?>
+                  <?php 
+                    $query2="SELECT * from `img_table` where `hos_id`='$hosid'";
+                    $query2_run=mysqli_query($con,$query2);
                     
-                      <img src="<?php echo "../landlord/" .$res['more_img'] ?>" alt="<?php echo $res['hos_name']."".$res['more_img'] ?>" style="margin: 10px;">
-                    
+                    while ($res=mysqli_fetch_array($query2_run)) {
+                      ?>
+                      
+                        <img src="<?php echo "../landlord/" .$res['more_img'] ?>" alt="<?php echo $res['hos_name']."".$res['more_img'] ?>" style="margin: 10px;">
+                      
 
-                <?php  }
-                ?>
+                  <?php  }
+                  ?>
 
-                <!-- get details from hos_details -->
-                <?php 
-                  $id=$_GET['hosid'];
-                  $query3="SELECT * from `hos_details` where `ID`='$id'";
-                  $query3_run=mysqli_query($con,$query3);
-                  $ress=mysqli_fetch_assoc($query3_run);
-                  $agent_id=$ress['agent_id'];
-                ?>
+                  <!-- get details from hos_details -->
+                  <?php 
+                    $id=$_GET['hosid'];
+                    $query3="SELECT * from `hos_details` where `ID`='$id'";
+                    $query3_run=mysqli_query($con,$query3);
+                    $ress=mysqli_fetch_assoc($query3_run);
+                    $agent_id=$ress['agent_id'];
+                  ?>
 
               </div>
 

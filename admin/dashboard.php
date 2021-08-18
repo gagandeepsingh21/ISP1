@@ -55,7 +55,8 @@ require '../server.php';
 <?php include("includes/sidebar.php");?>
 <?php include("includes/core_inc.php");?>
       <section id="main-content">
-          <section class="wrapper">
+          <section class="wrapper"><br>
+             <h3><i class="fa fa-angle-right"></i> Admin Dashboard</h3> <br><br>
             <?php
                 require '../config.php';
                 $user_ID=$_SESSION['id_admin'];

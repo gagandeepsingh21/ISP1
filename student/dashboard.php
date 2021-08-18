@@ -60,8 +60,8 @@ require '../server.php';
                 $qu="SELECT * FROM `details` WHERE `ID`='$user_ID'";
                 $run=mysqli_query($con,$qu);
                 $row=mysqli_fetch_assoc($run);
-            ?>
-            <h3 class="submit-property__headline">&gt;Student Dashboard</h3>
+            ?><br>
+            <h3 class="submit-property__headline" style="color:white;">&gt;Student Dashboard</h3>
   <div class="row">
     <form method="POST" action="dashboard.php" enctype="multipart/form-data">
          <div class="col-md-4">

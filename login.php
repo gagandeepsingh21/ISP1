@@ -23,7 +23,7 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.php" >Home</a></li>
                 <li class="nav-item"><a href="login.php" >Log in</a></li>
-                <li class="nav-item"><a href="signup.php" class="nav-link">Sign up</a></li>
+                <li class="nav-item"><a href="signup.php" >Sign up</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

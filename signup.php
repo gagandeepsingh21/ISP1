@@ -275,6 +275,7 @@ p{
 
         select{
             background:none;
+            width:100px;
         }
       
         h3 {
@@ -365,7 +366,7 @@ p{
     
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.php">Home</a></li>
-                <li class="nav-item"><a href="login.php" class="nav-link">Log in</a></li>
+                <li class="nav-item"><a href="login.php" >Log in</a></li>
                 <li class="nav-item"><a href="signup.php">Sign up</a></li>
             </ul>
             <div class="hamburger">

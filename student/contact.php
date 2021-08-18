@@ -10,6 +10,8 @@ require '../server.php';
   	unset($_SESSION['id']);
   	header("location:../login.php");
   }
+  //get hostel_id
+$hosid = $_GET['hosid'];
 ?>
 
 <!DOCTYPE html>
@@ -67,6 +69,19 @@ require '../server.php';
                         <div class="row">
                             <main class="col-md-9">
                                 <div class="property__feature-container">
+                                                      <?php 
+                    $query2="SELECT * from `img_table` where `hos_id`='$hosid'";
+                    $query2_run=mysqli_query($con,$query2);
+                    
+                    while ($res=mysqli_fetch_array($query2_run)) {
+                      ?>
+                      
+                        
+                      
+
+                 
+
+
                                     <div class="property__slider property__slider--v2">
                                         <div class="property__slider-container">
 
@@ -76,7 +91,7 @@ require '../server.php';
                                                                                                                             <img src="assets/img/download.gif"  style=" height: 500px;" alt="Image 1">
                                                                                                                          </div><!-- .property__slider-image -->
                                                                                                             <div class="property__slider-image">
-                                                                                                                            <img src="assets/img/Al barka lodge_Al barka l.jpg"  style=" height: 500px;" alt="Image 1">
+                                                                                                                            <img src="<?php echo "../landlord/" .$res['more_img'] ?>" alt="<?php echo $res['hos_name']."".$res['more_img'] ?>" style="margin: 10px;">
                                                                                                                          </div><!-- .property__slider-image -->
                                                                                                             <div class="property__slider-image">
                                                                                                                             <img src="assets/img/Al barka lodge_Al barka lodge.jpg"  style=" height: 500px;" alt="Image 1">
@@ -110,7 +125,7 @@ require '../server.php';
                                                 <li class="property__slider-item">
                                                                                                                                                                         <img src="assets/img/download.gif" alt="Image 1">
                                                                                                                  </li><!-- .property__slider-item -->
-                                                                                                                                                                    <img src="assets/img/Al barka lodge_Al barka l.jpg" alt="Image 1">
+                                                                                                                                                                     <img src="<?php echo "../landlord/" .$res['more_img'] ?>" alt="<?php echo $res['hos_name']."".$res['more_img'] ?>" style="margin: 10px;">
                                                                                                                  </li><!-- .property__slider-item -->
                                                                                                                                                                     <img src="assets/img/Al barka lodge_Al barka lodge.jpg" alt="Image 1">
                                                                                                                  </li><!-- .property__slider-item -->
@@ -126,6 +141,11 @@ require '../server.php';
                                             </ul><!-- .property__slider-nav -->
                                         </div><!-- .property__slider-container -->
                                     </div><!-- .property__slider -->
+                                     <?php  }
+                  ?>
+
+                  <!-- get details from hos_details -->
+           
 
 
  
