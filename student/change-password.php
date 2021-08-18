@@ -30,6 +30,7 @@ require '../server.php';
     <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
     <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" />
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style2.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
   
   </head>
@@ -42,9 +43,11 @@ require '../server.php';
       <?php include("includes/sidebar.php");?>
       <?php include("includes/core_inc.php");?>
       <section id="main-content">
-          <section class="wrapper">
+          <section class="wrapper"><br>
             
-                  <h3><i class="fa fa-angle-right"></i> Change Password</h3>
+                   <h3 class="submit-property__headline" style="color:white;">&gt;<a href="change-password.php">Change Password</a></h3>
+
+                  
           	<!-- <h3><i class="fa fa-angle-right"></i> Change Password</h3> -->
           	
           	<!-- BASIC FORM ELELEMNTS -->

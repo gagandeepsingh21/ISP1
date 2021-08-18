@@ -61,7 +61,7 @@ require '../server.php';
                 $run=mysqli_query($con,$qu);
                 $row=mysqli_fetch_assoc($run);
             ?><br>
-            <h3 class="submit-property__headline" style="color:white;">&gt;Student Dashboard</h3>
+            <h3 class="submit-property__headline" style="color:white;">&gt;<a href="dashboard.php">Student Dashboard</a></h3>
   <div class="row">
     <form method="POST" action="dashboard.php" enctype="multipart/form-data">
          <div class="col-md-4">

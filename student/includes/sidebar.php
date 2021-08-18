@@ -3,15 +3,8 @@
               <!-- sidebar menu start-->
     <ul class="sidebar-menu" id="nav-accordion">
               
-                    <?php
-                require '../config.php';
-                $user_ID=$_SESSION['id'];
-                $qu="SELECT * FROM `details` WHERE `ID`='$user_ID'";
-                $run=mysqli_query($con,$qu);
-                $row=mysqli_fetch_assoc($run);
-            ?>
  
-                  <h3 class="centered" style=" color:#0a0b0e; ">Welcome <br> <?php echo $row['FirstName'] ?> <?php echo $row['LastName'] ?></h3>
+                  <h3 class="centered" style=" color:#0a0b0e; ">Welcome <br> <?php echo $_SESSION['username'] ?></h3>
                   <li class="mt">
                       <a href="dashboard.php">
                           <i class="fa fa-dashboard"></i>

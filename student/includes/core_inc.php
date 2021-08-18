@@ -17,7 +17,7 @@
         $qu="UPDATE `details` SET `FirstName`='$fname',`LastName`='$lname',`Email`='$email',`phone_no`='$phone',`about_me`='$about' WHERE `ID`='$user_id'";
         
         if (mysqli_query($con,$qu)) {
-            header("Location:dashboard.php");
+            header("Location:../login.php");
             
             
         }else{
@@ -147,32 +147,6 @@ if (!empty($_FILES["feat_image"]["name"])) {
 }
 ?>
 
- <!-- update password for landlord -->
-    <?php 
-    if (isset($_POST['submit_new_password'])) {
-        change_pass();
-    }
-    function change_pass(){
-        require 'config.php';
-        $newpass=$_POST['newpassword'];
-        $newpass1=md5($newpass);
-        $newid=$_SESSION['id'];
-        $q="UPDATE `details` set `Password`='$newpass1' where `ID`='$newid'";
-        if (mysqli_query($con,$q)) {
-            ?>
-            <script>
-                alert("Password has been updated, Login again!")
-            </script>
-        <?php
-      header("Location:../login.php");
-  }else
-  ?> 
-    <script>
-        alert("oppsii, we ran into a problem updating the password, kindly try again")
-    </script>
-  <?php  }
-   ?>
-
 <?php
 function approved_hostel(){
         require 'config.php';
@@ -205,11 +179,18 @@ function approved_hostel(){
 
                     
                     <td class="manage-list__action">
-                                            <p><?php echo $row['OwnerName'] ?></p>
-                                            <p><?php echo $row['OwnerNumber'] ?></p>
+                         <?php
+                require '../config.php';
+                $user_ID=$_SESSION['id'];
+                $qu="SELECT * FROM `details` WHERE `ID`='$user_ID'";
+                $run=mysqli_query($con,$qu);
+                $row=mysqli_fetch_assoc($run);
+            ?>
+                                            <p><?php echo $row['FirstName'] ?></p>
+                                            <p><?php echo $row['phone_no'] ?></p>
                                             <a href="contact.php" class="btn btn-primary btn-sm">Contact Hostel Owner</a>
                                             
-            	                        </td>
+            	    </td>
                     
 
                 </tr>
@@ -217,7 +198,3 @@ function approved_hostel(){
        <?php }
     }
 ?>
-
-
-      
-

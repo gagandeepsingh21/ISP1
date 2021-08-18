@@ -13,7 +13,7 @@ Premium: http://www.gridgum.com
 body {
     color: #797979;
 	background: linear-gradient(120deg,#2980b9,#8e44ad);
-    font-family: 'Ruda', sans-serif;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
@@ -27,6 +27,7 @@ ul li {
 a, a:hover, a:focus {
     text-decoration: none;
     outline: none;
+    color:white;
 }
 ::selection {
 
@@ -174,6 +175,7 @@ hr {
 
 .centered {
 	text-align: center;
+    font-weight:bold;
 }
 
 .goleft {
@@ -352,7 +354,7 @@ ul.sidebar-menu li a span{
 }
 
 ul.sidebar-menu li a{
-    color: #0a0b0e;
+    color: white;
     text-decoration: none;
     display: block;
     padding: 15px 0 15px 10px;
@@ -745,6 +747,7 @@ ul.top-menu > form > li > .logout:hover, ul.top-menu > form > li > .logout:focus
 }
 
 .sidebar-toggle-box .fa-bars {
+    color:white;
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
@@ -2247,4 +2250,10 @@ label {
 .site-min-height {
     min-height: 900px;
 }
+  .submit-property__headline {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 20px;
+  }
 

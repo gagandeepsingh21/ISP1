@@ -946,7 +946,7 @@
     background-clip: padding-box;
     display: block;
     width: 100%;
-    border: 1px solid transparent;
+    border: 1px solid darkgray;
     padding: 10px 15px;
     border-radius: 4px;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -5876,7 +5876,7 @@
   .my-profile__label {
     display: block;
     margin-bottom: 10px;
-    color: #333333;
+    color: white;
     font-weight: bold;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
   }
@@ -5884,7 +5884,7 @@
     margin-bottom: 25px;
     border: 1px solid #dddddd;
     background-color: #f7f7f7;
-    color: #888888;
+    color: black;
   }
   .my-profile__submit {
     display: inline-block;
