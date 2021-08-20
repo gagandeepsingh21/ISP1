@@ -53,13 +53,12 @@ $hosid = $_GET['hosid'];
 
 <body>
   <!-- <?php
-        echo $_SESSION['id'];
+        echo $_SESSION['id_admin'];
         ?> -->
   <section id="container">
     <?php include("includes/header.php"); ?>
     <?php include("includes/sidebar.php"); ?>
     <?php include("includes/config.php"); ?>
-    <?php include("includes/core_inc.php")?>
     <section id="main-content">
       <section class="wrapper">
 
@@ -103,27 +102,27 @@ $hosid = $_GET['hosid'];
 
               <div class="property__feature"> <!-- display image part -->
 
-                  <?php 
-                    $query2="SELECT * from `img_table` where `hos_id`='$hosid'";
-                    $query2_run=mysqli_query($con,$query2);
+                <?php 
+                  $query2="SELECT * from `img_table` where `hos_id`='$hosid'";
+                  $query2_run=mysqli_query($con,$query2);
+                  
+                  while ($res=mysqli_fetch_array($query2_run)) {
+                    ?>
                     
-                    while ($res=mysqli_fetch_array($query2_run)) {
-                      ?>
-                      
-                        <img src="<?php echo "../landlord/" .$res['more_img'] ?>" alt="<?php echo $res['hos_name']."".$res['more_img'] ?>" style="margin: 10px;">
-                      
+                      <img src="<?php echo "../landlord/" .$res['more_img'] ?>" alt="<?php echo $res['hos_name']."".$res['more_img'] ?>" style="margin: 10px;">
+                    
 
-                  <?php  }
-                  ?>
+                <?php  }
+                ?>
 
-                  <!-- get details from hos_details -->
-                  <?php 
-                    $id=$_GET['hosid'];
-                    $query3="SELECT * from `hos_details` where `ID`='$id'";
-                    $query3_run=mysqli_query($con,$query3);
-                    $ress=mysqli_fetch_assoc($query3_run);
-                    $agent_id=$ress['agent_id'];
-                  ?>
+                <!-- get details from hos_details -->
+                <?php 
+                  $id=$_GET['hosid'];
+                  $query3="SELECT * from `hos_details` where `ID`='$id'";
+                  $query3_run=mysqli_query($con,$query3);
+                  $ress=mysqli_fetch_assoc($query3_run);
+                  $agent_id=$ress['agent_id'];
+                ?>
 
               </div>
 
@@ -204,14 +203,13 @@ $hosid = $_GET['hosid'];
   <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
   <script src="assets/js/jquery.scrollTo.min.js"></script>
   <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="assets/js/jquery.sparkline.js"></script>
+ 
 
 
   <!--common script for all pages-->
   <script src="assets/js/common-scripts.js"></script>
   
-  <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
-  <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+  
 
   <!--script for this page-->
   <script src="assets/js/custome.js"></script>

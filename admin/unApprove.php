@@ -3,7 +3,7 @@ require '../server.php';
   
 
   if (!isset($_SESSION['id_admin'])) {
-  	
+  	$_SESSION['msg'] = "You must log in first";
   	header('location:../login.php');
   }
   if (isset($_POST['logout'])) {

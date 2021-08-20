@@ -184,11 +184,11 @@ function approved_hostel(){
                 $user_ID=$_SESSION['id'];
                 $qu="SELECT * FROM `details` WHERE `ID`='$user_ID'";
                 $run=mysqli_query($con,$qu);
-                $row=mysqli_fetch_assoc($run);
+                $row1=mysqli_fetch_assoc($run);
             ?>
-                                            <p><?php echo $row['FirstName'] ?></p>
-                                            <p><?php echo $row['phone_no'] ?></p>
-                                            <a href="contact.php" class="btn btn-primary btn-sm">Contact Hostel Owner</a>
+                                            <p><?php echo $row1['FirstName'] ?></p>
+                                            <p><?php echo $row1['phone_no'] ?></p>
+                                            <a href="contact.php?hosid=<?php echo $row['ID'] ?>" class="btn btn-primary btn-sm">Contact Hostel Owner</a>
                                             
             	    </td>
                     

@@ -3,12 +3,13 @@ require '../server.php';
   
 
   if (!isset($_SESSION['id_admin'])) {
-  	
+  	$_SESSION['msg'] = "You must log in first";
   	header('location:../login.php');
   }
   if (isset($_POST['logout'])) {
+    unset($_SESSION['id_admin']);
   	
-  	unset($_SESSION['id_admin']);
+  	
   	header("location:../login.php");
   }
 ?>
@@ -34,7 +35,6 @@ require '../server.php';
     
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style2.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
@@ -47,55 +47,21 @@ require '../server.php';
   </head>
 
   <body>
-      <!-- <?php 
-       echo $_SESSION['id'];
+    <!-- <?php
+      echo $_SESSION['id_admin'];
     ?> -->
   <section id="container" >
 <?php include("includes/header.php");?>
 <?php include("includes/sidebar.php");?>
-<?php include("includes/core_inc.php");?>
       <section id="main-content">
-          <section class="wrapper"><br>
-             <h3><i class="fa fa-angle-right"></i> Admin Dashboard</h3> <br><br>
-            <?php
-                require '../config.php';
-                $user_ID=$_SESSION['id_admin'];
-                $qu="SELECT * FROM `details` WHERE `ID`='$user_ID'";
-                $run=mysqli_query($con,$qu);
-                $row=mysqli_fetch_assoc($run);
-            ?>
+          <section class="wrapper">
+
               <div class="row">
-              <form method="POST" action="dashboard.php" enctype="multipart/form-data">
-          <div class="col-md-4">
-            <label for="profile-first-name" class="my-profile__label">First Name</label>
-            <input type="text" name="fname" value="<?php echo $row['FirstName'] ?>" class="my-profile__field" id="profile-first-name">
-
-            <label for="profile-first-name" class="my-profile__label">Last Name</label>
-            <input type="text" name="lname" value="<?php echo $row['LastName'] ?>" class="my-profile__field" id="profile-first-name">
-
-            
-
-            <label for="profile-number" class="my-profile__label">Phone Number*</label>
-            <input type="number" value="<?php echo $row['phone_no'] ?>"  required onkeypress="if(this.value.length==12)return false;" name="phone" placeholder="07XXXXXXXX" class="my-profile__field" id="profile-number">
-
-           
-
-            <label for="profile-email" class="my-profile__label">Email*</label>
-            <input type="email" value="<?php echo $row['Email']?>" required name="email" class="my-profile__field" id="profile-email">
-
-
-
-          </div><!-- .col -->
-
-          <div class="col-md-5">
-            <label for="profile-introduce" class="my-profile__label">About Me</label>
-            <textarea id="profile-introduce" required name="about"   rows="10" class="my-profile__field"><?php echo $row['about_me'] ?></textarea>
-
-
-            <input type="submit" name="submit_update" class="my-profile__submit" value="Update profile">
-            
-          </div><!-- .col -->
-        </form>
+                  <div class="col-lg-9 main-chart">
+                    <h1>Admin Dashboard</h1>
+                  
+                  <div class="col-md-2 col-sm-2 box0">
+                    <div>
                  
                   </div>
                 </div>
