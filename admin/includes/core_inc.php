@@ -78,7 +78,7 @@ if (isset($_POST['submit_admin'])) {
                        <a href="viewhostel.php?hosid=<?php echo$row['ID'] ?>"> <img src="<?php echo "../landlord/".$row['ft_img']; ?>" alt="<?php echo $row['hos_name']." Image" ?>" class="listing__img" width="400px" height="200px"></a>
                     </td>
                                         
-                    <td class="manage-list__item-detail">
+                    <td class="manage-list__item-detail" >
                         <h4 class="blog"><a href="viewhostel.php?hosid=<?php echo$row['ID'] ?>"><?php echo $row['hos_name'] ?></a></h4>
                         <p class="listing__location"><i class="fa fa-building"></i> <?php echo $row['location'] ?></p>
                         <p class="listing__price"><i class="fa fa-money"></i> KSH: <?php echo $row['price'] ?>/month</p>
@@ -143,3 +143,5 @@ function approved_hostel(){
        <?php }
     }
 ?>
+
+

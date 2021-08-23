@@ -167,7 +167,7 @@ function approved_hostel(){
                     </td>
                                         
                     <td class="manage-list__item-detail">
-                        <h4 class="blog"><a href="#"><?php echo $row['hos_name'] ?></a></h4>
+                         <h4 class="blog"><a href="contact.php?hosid=<?php echo$row['ID'] ?>"><?php echo $row['hos_name'] ?></a></h4>
                         <p class="listing__location"><i class="fa fa-building"></i> <?php echo $row['location'] ?></p>
                         <p class="listing__price"><i class="fa fa-money"></i> KSH: <?php echo $row['price'] ?>/month</p>
                         <p class="listing__price"><i class="fa fa-list"></i> Rules: <?php echo $row['rules'] ?></p>
@@ -198,3 +198,52 @@ function approved_hostel(){
        <?php }
     }
 ?>
+
+
+<?php 
+
+if (isset($_POST['submit_contact_form'])) {
+    submit_contact_form();
+}
+
+function submit_contact_form(){
+    require 'config.php';
+
+
+
+
+
+    $id=$_GET['hosid'];
+    $query1="select * from `hos_details` where `ID`='$id'";
+    $que=mysqli_query($con,$query1);
+    $row=mysqli_fetch_assoc($que);
+    $agentid=$row['agent_id'];
+
+    $name=$_POST['name'];
+    $Email=$_POST['Email'];
+    $phonenumber=$_POST['phonenumber'];
+    $message=$_POST['comment'];
+    $date=$_POST['date'];
+          
+ 
+                 
+                 $quer="INSERT INTO `contact` (`agent_id`, `hos_id`, `name`, `email`, `phone_no`, `message`, `start_stay`) VALUES ('$agentid','$id','$name','$Email','$phonenumber','$message','$date')";
+
+            if ($query_run = mysqli_query($con, $quer)) {
+                
+
+                
+                    ?><script>
+                        window.alert('message submitted ');
+                        
+                    </script>
+                    <?php } else {
+                    ?>
+                    <script>
+                        window.alert('Opps! Something Went Wrong, check your inputs again');
+                        
+                    </script>
+                    <?php
+                }
+            } 
+        ?>

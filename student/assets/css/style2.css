@@ -946,7 +946,7 @@
     background-clip: padding-box;
     display: block;
     width: 100%;
-    border: 1px solid darkgray;
+    border: 1px solid transparent;
     padding: 10px 15px;
     border-radius: 4px;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -4621,7 +4621,7 @@
     margin-right: 15px;
     padding: 2px 18px;
     border-radius: 4px;
-    background-color: #ff9d00;
+    background-color: #ff0000;
     color: #ffffff;
     font-size: 10px;
     text-transform: uppercase;
@@ -5876,7 +5876,7 @@
   .my-profile__label {
     display: block;
     margin-bottom: 10px;
-    color: white;
+    color: #333333;
     font-weight: bold;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
   }
@@ -5884,7 +5884,7 @@
     margin-bottom: 25px;
     border: 1px solid #dddddd;
     background-color: #f7f7f7;
-    color: black;
+    color: #888888;
   }
   .my-profile__submit {
     display: inline-block;
