@@ -106,9 +106,9 @@ require '../server.php';
             <span class="settings-block__title">Manage Listing</span>
             <ul class="settings">
               <li class="setting"><a href="registeredAgent.php" class="setting__link"><ion-icon name="home" class="setting__icon"></ion-icon>View Registered Agent</a></li>
-              <li class="setting "><a href="viewUploads.php" class="setting__link"><ion-icon name="refresh-circle" class="setting__icon"></ion-icon>View Uploaded Hostels</a></li>
-              <li class="setting "><a href="Unapprove.php" class="setting__link"><ion-icon name="cloud-upload" class="setting__icon"></ion-icon>View Unapproved Hostels</a></li>
-                  <li class="setting "><a href="#" class="setting__link"><ion-icon name="cloud-upload" class="setting__icon"></ion-icon>Users Feedback</a></li>
+              <li class="setting "><a href="viewUploads.php" class="setting__link"><ion-icon name="eye" class="setting__icon"></ion-icon>View Uploaded Hostels</a></li>
+              <li class="setting "><a href="Unapprove.php" class="setting__link"><ion-icon name="close-circle" class="setting__icon"></ion-icon>View Unapproved Hostels</a></li>
+                  <li class="setting "><a href="#" class="setting__link"><ion-icon name="mail-unread" class="setting__icon"></ion-icon>Users Feedback</a></li>
               
     
             </ul><!-- settings -->
@@ -117,7 +117,7 @@ require '../server.php';
           <div class="settings-block">
             <ul class="settings">
               <li class="setting"><a href="change-password.php" class="setting__link"><ion-icon name="lock-open" class="setting__icon"></ion-icon>Change Password</a></li>
-               <li class="setting"><a href="createAdmin.php" class="setting__link"><ion-icon name="lock-open" class="setting__icon"></ion-icon>Create Admin</a></li>
+               <li class="setting"><a href="createAdmin.php" class="setting__link"><ion-icon name="create" class="setting__icon"></ion-icon>Create Admin</a></li>
               <form action="dashboard.php" method="post">
               <li><input type="submit" value="Logout" name="logout" class="logout" style="background-color: red; color:aliceblue" ></li>
               </form>

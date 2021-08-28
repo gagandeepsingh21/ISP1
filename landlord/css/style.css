@@ -992,7 +992,10 @@ body {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  background-color: #e0e0e0 ;
+  background: whitesmoke;  /* fallback for old browsers */
+background: whitesmoke;  /* Chrome 10-25, Safari 5.1-6 */
+background: whitesmoke; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 h1,
 h2,
@@ -1233,7 +1236,7 @@ button .btn-success{
   background-color: green;
 }
 .header--blue {
-  background-color: rgba(0, 23, 71, 0.85);
+  background-color: darkblue;
 }
 .header--top {
   position: absolute;
@@ -5676,7 +5679,7 @@ div.similar-home:last-of-type {
   align-items: center;
   margin-bottom: 30px;
   padding: 20px;
-  background-color: #eeeeee;
+  background-color: darkgray;
   border-radius: 3px;
 }
 .manage-list__item {
@@ -5685,7 +5688,7 @@ div.similar-home:last-of-type {
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid darkgray;
 }
 .manage-list__item:last-child {
   padding-bottom: 0;
@@ -5699,11 +5702,11 @@ div.similar-home:last-of-type {
   margin-bottom: 0;
 }
 .manage-list__item-img {
-  display: none;
+  margin-right: 30px;
 }
 @media only screen and (min-width: 992px) {
   .manage-list__item-img {
-    display: block;
+    
     margin-right: 30px;
   }
 }
@@ -5721,6 +5724,13 @@ div.similar-home:last-of-type {
 }
 .manage-list__action .remove:hover {
   color: red;
+}
+.remove{
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  text-align: center;
+  margin-right: 15px;
 }
 /* 4.43. My Property / .my-property
 ***********************/
@@ -6168,9 +6178,17 @@ html.hidescrollbar body {
 .img_edit{
   filter: brightness(40%);
   transition: 0.3s;
+  border-radius: 10px;
 }
 .img_edit:hover{
   filter: brightness(100%);
   filter: drop-shadow(3px 8px 9px black);
   transition: 0.3s;
+}
+a.btn.btn-success.btn-sm {
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  background-color: whitesmoke;
+  margin-right: 20px;
 }

@@ -111,6 +111,7 @@ body{
                 <li class="nav-item"><a href="">Home</a></li>
                 <li class="nav-item"><a href="login.php" class="nav-link">Log in</a></li>
                 <li class="nav-item"><a href="signup.php">Sign up</a></li>
+                  <li class="nav-item"><a href="contact.php">Contact Us</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -128,6 +129,18 @@ body{
 
   </div>
 </div>
+<section id="home-info" class="bg-dark">
+        <div class="info-img"></div>
+        <div class="info-content">
+          <h2 class="h2-tag"><span class="text-primary">Feedback</span> form</h2>
+          <p>
+          We care about our customers and look forward to make you happy.
+              So if you have any issue contact us using the form below and we will
+              try our best to solve them.
+          </p>
+          <a href="contact.php" class="read" style="color: whitesmoke;">Feedback Form</a>
+        </div>
+      </section>
 
 
     

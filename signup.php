@@ -337,7 +337,7 @@ p{
             outline: none;
             border: none;
             border-bottom: #18e018 dotted #fff;
-            color: #fff;
+            color: black;
             border-radius: 5px;
             margin-top: 10px;
             font-weight: bold;
@@ -368,6 +368,7 @@ p{
                 <li class="nav-item"><a href="index.php">Home</a></li>
                 <li class="nav-item"><a href="login.php" >Log in</a></li>
                 <li class="nav-item"><a href="signup.php">Sign up</a></li>
+                  <li class="nav-item"><a  href="contact.php">Contact Us</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -401,7 +402,7 @@ p{
             <input type="Password" placeholder="Confirm password" name="pass2" value=""><br><br>
             <label for="User type">User type: </label>
             <select name="type" id="sel">
-                <option value="Student">Student</option>
+                <option value="student">Student</option>
                 <option value="landlord">Landlord</option>
             </select><br><br>
 
