@@ -17,6 +17,10 @@ if (isset($_POST['reg_user'])) {
   $email=mysqli_real_escape_string($con, $_POST['email']);
   $pass1=mysqli_real_escape_string($con, $_POST['pass1']);
   $pass2=mysqli_real_escape_string($con, $_POST['pass2']);
+  $religion=mysqli_real_escape_string($con, $_POST['religion']);
+  $Location1=mysqli_real_escape_string($con, $_POST['location']);
+  $mstatus=$_POST['mstatus'];
+  $gender=$_POST['gender'];
   $type=$_POST['type'];
   $p_no=$_POST['phone_number'];
   
@@ -50,7 +54,7 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($pass1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO `details`( `FirstName`, `LastName`, `Email`, `phone_no`,`Password`, `Type`) VALUES ('$fname','$lname','$email','$p_no','$password','$type')";
+  	$query = "INSERT INTO `details`( `FirstName`, `LastName`, `Email`, `phone_no`,`Password`, `Type`,`Religion`,`location`,`mstatus`,`gender`) VALUES ('$fname','$lname','$email','$p_no','$password','$type','$religion','$Location1','$mstatus','$gender')";
   	mysqli_query($con, $query);
   	$_SESSION['username'] = $fname;
   	$_SESSION['success'] = "You are now logged in";
