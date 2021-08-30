@@ -144,15 +144,30 @@ require '../server.php';
                                         <!-- <input type="text"  id="property-price" name="hos_type" required> -->
                                         <select class="ht-field" id="property-type" name="hos_type" required>
                                             <option disabled="disabled">Choose room Types</option>
-                                            <option >Private room</option>
+                                            <option Value="Private room" >Private room</option>
                                             <option >Shared room</option>
-                                            
                                         </select>
                                     </div><!-- .submit-property__group -->
                                 </div><!-- .col -->
 
+                                <div class="col-md-4">
+                                    <div class="submit-property__group">
+                                        <label for="property-price" class="submit-property__label">if shared *</label>
+                                        <input type="number"  id="property-price" class="submit-property__field" name="share_no" placeholder="How many people per room">
+                                    </div><!-- .submit-property__group -->
+                                  </div><!-- .col -->
+
+                                  <div class="col-md-4">
+                                    <div class="submit-property__group">
+                                        <label for="property-price" class="submit-property__label">bed available *</label>
+                                        <input type="number"  id="property-price" class="submit-property__field" name="bed_no" placeholder="number of beds"  required>
+                                        
+                                    </div><!-- .submit-property__group -->
+                                </div><!-- .col -->
+                            </div>
+                          
+                            
                                 
-                            </div><!-- .row -->
 
                             <div class="row">
                                 <div class="col-md-4">
@@ -220,6 +235,13 @@ require '../server.php';
                             <label for="property-address" class="submit-property__label">Friendly Address</label>
                             <input required type="text" class="submit-property__field"  id="property-address" name="address" placeholder="Opposite..../next to...." required>
                         </div><!-- .submit-property__group -->
+
+                        <div class="submit-property__group">
+                            <label for="property-address" class="submit-property__label">Do you provide transport?</label>
+                            <textarea required cols="10" rows="10" name="transport" class="submit-property__field" placeholder="Do you provide transport for the students who wish to stay at your hostel but the location is far from thier college/school/university" style="border-color:#1fc341; border-width:1px;"></textarea>
+                           
+                        </div><!-- .submit-property__group -->
+
                     </div><!-- .submit-property__block -->
 
                     <div class="submit-property__block">

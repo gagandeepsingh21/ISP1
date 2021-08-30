@@ -165,9 +165,25 @@ require '../server.php';
                                         </select>
                                     </div><!-- .submit-property__group -->
                                 </div><!-- .col -->
-
                                 
+                                <div class="col-md-4">
+                                    <div class="submit-property__group">
+                                        <label for="property-price" class="submit-property__label">If shared *</label>
+                                        <input type="number"  id="property-price" name="share_no" class="submit-property__field" placeholder="Number of people per room" value="<?php echo $row['share_no'] ?>">
+                                        
+                                    </div><!-- .submit-property__group -->
+                                </div><!-- .col -->
+                                
+                                <div class="col-md-4">
+                                    <div class="submit-property__group">
+                                        <label for="property-price" class="submit-property__label">Beds Available *</label>
+                                        <input type="number"  id="property-price" name="bed_no" class="submit-property__field" placeholder="No of beds available" value="<?php echo $row['bed_no'] ?>" required>
+                                        
+                                    </div><!-- .submit-property__group -->
+                                </div><!-- .col -->
                             </div><!-- .row -->
+
+                            
 
                             <div class="row">
                                 <div class="col-md-4">
@@ -203,6 +219,13 @@ require '../server.php';
                             <label for="property-address" class="submit-property__label">Friendly Address</label>
                             <input required type="text"  id="property-address" class="submit-property__field" name="address" placeholder="Opposite..../next to...." value="<?php echo $row['friendly_add'] ?>" required>
                         </div><!-- .submit-property__group -->
+
+                        <div class="submit-property__group">
+                            <label for="property-address" class="submit-property__label">Do you provide transport?</label>
+                            <textarea required cols="10" rows="10" name="transport" class="submit-property__field" placeholder="Do you provide transport for the students who wish to stay at your hostel but the location is far from thier college/school/university" style="border-color:#1fc341; border-width:1px;"><?php echo $row['transport'] ?></textarea>
+                           
+                        </div><!-- .submit-property__group -->
+
                     </div><!-- .submit-property__block -->
 
                     <div class="submit-property__block">

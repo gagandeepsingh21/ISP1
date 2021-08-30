@@ -91,7 +91,7 @@ if (isset($_POST['login_user'])) {
             $_SESSION['success'] = "Hello ".$uname." You are logged to landlord page as ".$tp;
             header("location:landlord/dashboard.php");
 
-          }elseif ($row['Type']=='Student') {
+          }elseif ($row['Type']=='student') {
             $_SESSION['id'] = $row['ID'];
             $_SESSION['username'] = $row['FirstName'];
             $tp=$row['Type'];

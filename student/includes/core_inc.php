@@ -119,7 +119,7 @@ function approved_hostel(){
             $propid=$row['ID'];
             ?> 
 
-<li class="manage-list__item">
+                <li class="manage-list__item">
                     <div class="manage-list__item-container">
                     <div class="manage-list__item-img">
                             <?php echo $i++ ?>
@@ -130,11 +130,13 @@ function approved_hostel(){
                             </a>
                         </div>
                         <div class="manage-list__item-detail">
-                            <h3 class="listing__title"><a href="viewhostel.php?hosid=<?php echo $row['ID'] ?>"><?php echo $row['hos_name']; ?></a></h3>
+                            <h3 class="listing__title"><a href="contact.php?hosid=<?php echo $row['ID'] ?>"><?php echo $row['hos_name']; ?></a></h3>
                             <p class="listing_location"><ion-icon name="location-outline"></ion-icon>Location: <?php echo $row['location'] ?></p>
                             <p class="listing_price"><ion-icon name="pricetag-outline" ></ion-icon>Price: KSH <?php echo $row['price'] ?></p>
                             <p class="listing_price"><ion-icon name="warning-outline" ></ion-icon>Rules <?php echo $row['rules'] ?></p>
                             <p class="listing_price"><ion-icon name="pricetag-outline" ></ion-icon>Hostel Type <?php echo $row['hos_type'] ?></p>
+                            <p class="listing_price"><ion-icon name="people-outline" ></ion-icon>People per room:  <?php echo $row['share_no'] ?></p>
+                            <p class="listing_price"><ion-icon name="bed-outline" ></ion-icon>Beds available:  <?php echo $row['bed_no'] ?></p>
                             <p class="listing_price"><ion-icon name="cafe-outline" ></ion-icon>Services: <?php echo $row['services'] ?></p>
                         </div>
                     </div><!--end for manage-list container -->
@@ -146,8 +148,7 @@ function approved_hostel(){
                         <!-- <a href="update_hostel.php?edit_hostel=<?php echo $row['ID'] ?>" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a><br>
                         <a href="includes/remove_hostel.php?remove=<?php echo $row['ID'] ?>" class="remove" id="#"><i class="fa fa-times" aria-hidden="true"></i> Remove</a> -->
                         <!-- <a href="includes/approve_hostel.php?status=<?php echo$row['ID'] ?>" class="btn btn-success btn-sm" ><ion-icon name="checkmark-outline"></ion-icon>Approve</a> -->
-                        <a href="contact.php?hosid=<?php echo $row['ID'] ?>" class="remove" ><i class="fa fa-phone" aria-hidden="true"></i> Contact owner</a>
-                        
+                        <a href="contact.php?hosid=<?php echo $row['ID'] ?>" class="remove" ><i class="fa fa-eye" aria-hidden="true"></i> View more</a>                        
                     </div>
 
                 </li><!--end for li -->

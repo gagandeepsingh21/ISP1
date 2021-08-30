@@ -199,7 +199,7 @@ p{
    .nav-menu{
         position: fixed;
         top:-110%;
-        margin-top:15%;
+        margin-top:12%;
         flex-direction: column;
         color:white;
         width: 100%;
@@ -220,7 +220,7 @@ p{
             padding: 14px 40px;
             border-radius: 10px;
             box-sizing: border-box;
-            margin-top:50px;
+            margin-top:100px;
             overflow: hidden;
             margin-bottom:100px;
 

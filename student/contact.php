@@ -212,7 +212,8 @@ $hosid = $_GET['hosid'];
                     <li class="property__details-item"><span class="property__details-item--cat">Location:</span><?php echo $ress['location']; ?></li>
                     <li class="property__details-item"><span class="property__details-item--cat">friendly address:</span> <?php echo $ress['friendly_add']; ?><li>
                     <li class="property__details-item"><span class="property__details-item--cat">Services: </span><?php  echo $ress['services']; ?>
-                                            
+                    <li class="property__details-item"><span class="property__details-item--cat">People per room: </span><?php  echo $ress['share_no']; ?>   
+                    <li class="property__details-item"><span class="property__details-item--cat">Beds available: </span><?php  echo $ress['bed_no']; ?>                    
                    </ul><!-- .property__details-list -->
                    <iframe width="100%" height="250" src="https://maps.google.com/maps?q=<?php echo $address; ?>&output=embed"></iframe>
                 </div><!-- .property__feature -->
@@ -258,8 +259,10 @@ $hosid = $_GET['hosid'];
                                   <section class="widget" id="contact_agent">
                                         <form method = "POST" action="includes/contact_form.php?prpID=<?php echo $hosid ?>" class="contact-form contact-form--white" id="contact_form">
                                             <div style="padding:10px" class="contact-form__body">
+                                            <input type="hidden" name="student_id" value="<?php echo $_SESSION['id']; ?>">
                                             <input type="hidden" name="hostel_id" value="<?php echo $hosid; ?>">
                                             <input type="hidden" name="id_for_agent" value="<?php echo $row['agent_id'] ?>">
+                                            <input type="hidden" name="hostel_name" value="<?php echo $row['hos_name']; ?>">
                                                 <h3 style="text-align:center; padding:10px"> Contact Form </h3><br>
                                                 <input type="text"  class="contact-form__field" placeholder="Name" name="name" required>                                           
                                                 <input type="email" class="contact-form__field" placeholder="Email" name="Email" required>
@@ -270,8 +273,11 @@ $hosid = $_GET['hosid'];
                                             </div><!-- .contact-form__body -->
 
                                             <div class="contact-form__footer">
-                                                <input type="submit" class="contact-form__submit" name="submit_contact_form" value="Contact Owner">
+                                              <input type="submit" class="contact-form-con" name="submit_contact_far" style="width: 33%; background-color: rebeccapurple;" value="Intrested But Far">
+                                              <input type="submit" class="contact-form-con" name="submit_contact_expensive" style="width: 33%; background-color: red;" value="Intrested But Expensive">
+                                              <input type="submit" class="contact-form-con" name="submit_contact_form"style="width: 33%;" value="Contact Owner For Booking">
                                             </div><!-- .contact-form__footer -->
+                                            
                                         </form><!-- .contact-form -->
                                     </section><!-- .widget -->
                                 </div>

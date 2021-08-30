@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/55cd7b20c8.js" crossorigin="anonymous"></script>
+        <style>
+            *, .navbar{
+                background: linear-gradient(120deg,#2980b9,#8e44ad);
+            }
+        </style>
 </head>
 
 <body>
@@ -24,7 +30,7 @@
                 <li class="nav-item"><a href="index.php" >Home</a></li>
                 <li class="nav-item"><a href="login.php" >Log in</a></li>
                 <li class="nav-item"><a href="signup.php" >Sign up</a></li>
-                  <li class="nav-item"><a href="contact.php">Contact Us</a></li>
+                 <li class="nav-item"><a href="contact.php" >Contact us</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -40,7 +46,7 @@
             <div class="loginbox">
                 <h1>Log in</h1>
                <h4 class="error"> <?php include('errors.php'); ?></h4><br>
-                <label for="Username"> Username</label>
+                <label for="Username" style="color:#130200;">Username</label>
                 <input type="text" name="email" placeholder="Username" id="" required><br><br>
                 <label for="Password">Password</label>
                 <input type="Password" name="password" placeholder="Password" id="" required><br><br>
